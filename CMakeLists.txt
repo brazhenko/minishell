@@ -4,4 +4,4 @@ project(minishell)
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(inc)
-add_executable(minishell minishell.c)
+add_executable(minishell src/minishell.c src/execute_process.c src/get_env.c src/ft_putbsn.c src/ft_cd.c src/parse_command.c)

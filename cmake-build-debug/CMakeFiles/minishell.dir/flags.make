@@ -6,5 +6,5 @@ C_FLAGS = -g
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/lreznak-/Documents/minishell/inc 
+C_INCLUDES = -I/Users/lreznak-/Documents/minishell1/minishell/inc 
 

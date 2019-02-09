@@ -41,6 +41,7 @@ typedef	struct		s_string
 	char	*begin;
 }					t_string;
 
+void				ft_putbsn(char *str);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
@@ -134,6 +135,7 @@ void				dcl_begin(t_dcl **elem);
 void				dcl_forward(t_dcl **elem);
 void				dcl_end(t_dcl **elem);
 void				dcl_take_n(int n, t_dcl **elem);
+
 
 int					calc(char *expr);
 

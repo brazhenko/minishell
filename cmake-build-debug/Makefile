@@ -48,10 +48,10 @@ RM = /Users/lreznak-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/lreznak-/Documents/minishell
+CMAKE_SOURCE_DIR = /Users/lreznak-/Documents/minishell1/minishell
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/lreznak-/Documents/minishell/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/lreznak-/Documents/minishell1/minishell/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lreznak-/Documents/minishell/cmake-build-debug/CMakeFiles /Users/lreznak-/Documents/minishell/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lreznak-/Documents/minishell1/minishell/cmake-build-debug/CMakeFiles /Users/lreznak-/Documents/minishell1/minishell/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lreznak-/Documents/minishell/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lreznak-/Documents/minishell1/minishell/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,32 +123,167 @@ minishell/fast:
 	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/build
 .PHONY : minishell/fast
 
-minishell.o: minishell.c.o
+src/execute_process.o: src/execute_process.c.o
 
-.PHONY : minishell.o
+.PHONY : src/execute_process.o
 
 # target to build an object file
-minishell.c.o:
-	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/minishell.c.o
-.PHONY : minishell.c.o
+src/execute_process.c.o:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/execute_process.c.o
+.PHONY : src/execute_process.c.o
 
-minishell.i: minishell.c.i
+src/execute_process.i: src/execute_process.c.i
 
-.PHONY : minishell.i
+.PHONY : src/execute_process.i
 
 # target to preprocess a source file
-minishell.c.i:
-	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/minishell.c.i
-.PHONY : minishell.c.i
+src/execute_process.c.i:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/execute_process.c.i
+.PHONY : src/execute_process.c.i
 
-minishell.s: minishell.c.s
+src/execute_process.s: src/execute_process.c.s
 
-.PHONY : minishell.s
+.PHONY : src/execute_process.s
 
 # target to generate assembly for a file
-minishell.c.s:
-	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/minishell.c.s
-.PHONY : minishell.c.s
+src/execute_process.c.s:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/execute_process.c.s
+.PHONY : src/execute_process.c.s
+
+src/ft_cd.o: src/ft_cd.c.o
+
+.PHONY : src/ft_cd.o
+
+# target to build an object file
+src/ft_cd.c.o:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/ft_cd.c.o
+.PHONY : src/ft_cd.c.o
+
+src/ft_cd.i: src/ft_cd.c.i
+
+.PHONY : src/ft_cd.i
+
+# target to preprocess a source file
+src/ft_cd.c.i:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/ft_cd.c.i
+.PHONY : src/ft_cd.c.i
+
+src/ft_cd.s: src/ft_cd.c.s
+
+.PHONY : src/ft_cd.s
+
+# target to generate assembly for a file
+src/ft_cd.c.s:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/ft_cd.c.s
+.PHONY : src/ft_cd.c.s
+
+src/ft_putbsn.o: src/ft_putbsn.c.o
+
+.PHONY : src/ft_putbsn.o
+
+# target to build an object file
+src/ft_putbsn.c.o:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/ft_putbsn.c.o
+.PHONY : src/ft_putbsn.c.o
+
+src/ft_putbsn.i: src/ft_putbsn.c.i
+
+.PHONY : src/ft_putbsn.i
+
+# target to preprocess a source file
+src/ft_putbsn.c.i:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/ft_putbsn.c.i
+.PHONY : src/ft_putbsn.c.i
+
+src/ft_putbsn.s: src/ft_putbsn.c.s
+
+.PHONY : src/ft_putbsn.s
+
+# target to generate assembly for a file
+src/ft_putbsn.c.s:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/ft_putbsn.c.s
+.PHONY : src/ft_putbsn.c.s
+
+src/get_env.o: src/get_env.c.o
+
+.PHONY : src/get_env.o
+
+# target to build an object file
+src/get_env.c.o:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/get_env.c.o
+.PHONY : src/get_env.c.o
+
+src/get_env.i: src/get_env.c.i
+
+.PHONY : src/get_env.i
+
+# target to preprocess a source file
+src/get_env.c.i:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/get_env.c.i
+.PHONY : src/get_env.c.i
+
+src/get_env.s: src/get_env.c.s
+
+.PHONY : src/get_env.s
+
+# target to generate assembly for a file
+src/get_env.c.s:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/get_env.c.s
+.PHONY : src/get_env.c.s
+
+src/minishell.o: src/minishell.c.o
+
+.PHONY : src/minishell.o
+
+# target to build an object file
+src/minishell.c.o:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/minishell.c.o
+.PHONY : src/minishell.c.o
+
+src/minishell.i: src/minishell.c.i
+
+.PHONY : src/minishell.i
+
+# target to preprocess a source file
+src/minishell.c.i:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/minishell.c.i
+.PHONY : src/minishell.c.i
+
+src/minishell.s: src/minishell.c.s
+
+.PHONY : src/minishell.s
+
+# target to generate assembly for a file
+src/minishell.c.s:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/minishell.c.s
+.PHONY : src/minishell.c.s
+
+src/parse_command.o: src/parse_command.c.o
+
+.PHONY : src/parse_command.o
+
+# target to build an object file
+src/parse_command.c.o:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/parse_command.c.o
+.PHONY : src/parse_command.c.o
+
+src/parse_command.i: src/parse_command.c.i
+
+.PHONY : src/parse_command.i
+
+# target to preprocess a source file
+src/parse_command.c.i:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/parse_command.c.i
+.PHONY : src/parse_command.c.i
+
+src/parse_command.s: src/parse_command.c.s
+
+.PHONY : src/parse_command.s
+
+# target to generate assembly for a file
+src/parse_command.c.s:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/parse_command.c.s
+.PHONY : src/parse_command.c.s
 
 # Help Target
 help:
@@ -159,9 +294,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... minishell"
-	@echo "... minishell.o"
-	@echo "... minishell.i"
-	@echo "... minishell.s"
+	@echo "... src/execute_process.o"
+	@echo "... src/execute_process.i"
+	@echo "... src/execute_process.s"
+	@echo "... src/ft_cd.o"
+	@echo "... src/ft_cd.i"
+	@echo "... src/ft_cd.s"
+	@echo "... src/ft_putbsn.o"
+	@echo "... src/ft_putbsn.i"
+	@echo "... src/ft_putbsn.s"
+	@echo "... src/get_env.o"
+	@echo "... src/get_env.i"
+	@echo "... src/get_env.s"
+	@echo "... src/minishell.o"
+	@echo "... src/minishell.i"
+	@echo "... src/minishell.s"
+	@echo "... src/parse_command.o"
+	@echo "... src/parse_command.i"
+	@echo "... src/parse_command.s"
 .PHONY : help
 
 
