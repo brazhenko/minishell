@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/minishell.dir/src/ft_putbsn.c.o"
   "CMakeFiles/minishell.dir/src/ft_cd.c.o"
   "CMakeFiles/minishell.dir/src/parse_command.c.o"
+  "CMakeFiles/minishell.dir/src/cd_buildin.c.o"
   "minishell.pdb"
   "minishell"
 )

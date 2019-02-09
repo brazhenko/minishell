@@ -4,17 +4,9 @@
 int                 main(int c, char **v, char **envp)
 {
     char		*command;
+	pid_t pid;
 
     command = ft_strnew(2048);
-	pid_t pid;
-    char *const parmList[] = {"/bin/ls", "-l", NULL};
-    char *const envParms[2] = {NULL};
-
-
-
-//		puts(get_env(ft_strjoin("PATH", "="), envp));
-	// exe_process()
-
 	while (ft_strncmp("exit\n", command, 5) != 0)
 	{
 		ft_putstr("$>");
@@ -24,8 +16,17 @@ int                 main(int c, char **v, char **envp)
  		while (*parsed)
 		{
  			if (parsed && *parsed && **parsed)
-				exe_process(parse_path(**parsed, envp), **parsed, *parsed, envp);
- 			parsed++;
+			{
+ 				if (!ft_strcmp("cd", **parsed))
+				{
+					write(1, "CD\n", 3);
+ 					cd_builtin(*parsed, envp);
+
+				}
+ 				else
+ 					exe_process(parse_path(**parsed, envp), **parsed, *parsed, envp);
+			}
+			parsed++;
 		}
 	}
 }

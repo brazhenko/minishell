@@ -123,6 +123,33 @@ minishell/fast:
 	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/build
 .PHONY : minishell/fast
 
+src/cd_buildin.o: src/cd_buildin.c.o
+
+.PHONY : src/cd_buildin.o
+
+# target to build an object file
+src/cd_buildin.c.o:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/cd_buildin.c.o
+.PHONY : src/cd_buildin.c.o
+
+src/cd_buildin.i: src/cd_buildin.c.i
+
+.PHONY : src/cd_buildin.i
+
+# target to preprocess a source file
+src/cd_buildin.c.i:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/cd_buildin.c.i
+.PHONY : src/cd_buildin.c.i
+
+src/cd_buildin.s: src/cd_buildin.c.s
+
+.PHONY : src/cd_buildin.s
+
+# target to generate assembly for a file
+src/cd_buildin.c.s:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/cd_buildin.c.s
+.PHONY : src/cd_buildin.c.s
+
 src/execute_process.o: src/execute_process.c.o
 
 .PHONY : src/execute_process.o
@@ -294,6 +321,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... minishell"
+	@echo "... src/cd_buildin.o"
+	@echo "... src/cd_buildin.i"
+	@echo "... src/cd_buildin.s"
 	@echo "... src/execute_process.o"
 	@echo "... src/execute_process.i"
 	@echo "... src/execute_process.s"

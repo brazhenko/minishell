@@ -84,6 +84,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/lreznak-/Documents/minishell1/minishell/src/cd_buildin.c">
+			<Option target="minishell"/>
+		</Unit>
 		<Unit filename="/Users/lreznak-/Documents/minishell1/minishell/src/execute_process.c">
 			<Option target="minishell"/>
 		</Unit>
