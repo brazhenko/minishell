@@ -7,22 +7,31 @@ int                 main(int c, char **v, char **envp)
 	pid_t pid;
 
     command = ft_strnew(2048);
-	while (ft_strncmp("exit\n", command, 5) != 0)
+	while (1)
 	{
-		ft_putstr("$>");
+		ft_putstr("$> ");
 		read(STDIN_FILENO, command, 2048);
-
- 		char ***parsed = parse_command(str_till_bsn(command));
+ 		char ***parsed = parse_command(str_till_bsn(command), envp);
  		while (*parsed)
 		{
  			if (parsed && *parsed && **parsed)
 			{
- 				if (!ft_strcmp("cd", **parsed))
+				if (ft_strequ("echo", **parsed))
 				{
-					write(1, "CD\n", 3);
- 					cd_builtin(*parsed, envp);
-
+					echo_builtin(*parsed, envp);
 				}
+ 				else if (ft_strequ("cd", **parsed))
+				{
+ 					cd_builtin(*parsed, envp);
+				}
+ 				else if (ft_strequ("setenv", **parsed)) ;
+ 				else if (ft_strequ("unsetenv", **parsed)) ;
+ 				else if (ft_strequ("env", **parsed))
+				{
+					env_builtin(envp);
+				}
+ 				else if (ft_strequ("exit", **parsed))
+					exit(0) ;
  				else
  					exe_process(parse_path(**parsed, envp), **parsed, *parsed, envp);
 			}

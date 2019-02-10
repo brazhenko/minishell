@@ -4,13 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/lreznak-/Documents/minishell1/minishell/src/cd_buildin.c" "/Users/lreznak-/Documents/minishell1/minishell/cmake-build-debug/CMakeFiles/minishell.dir/src/cd_buildin.c.o"
-  "/Users/lreznak-/Documents/minishell1/minishell/src/execute_process.c" "/Users/lreznak-/Documents/minishell1/minishell/cmake-build-debug/CMakeFiles/minishell.dir/src/execute_process.c.o"
-  "/Users/lreznak-/Documents/minishell1/minishell/src/ft_cd.c" "/Users/lreznak-/Documents/minishell1/minishell/cmake-build-debug/CMakeFiles/minishell.dir/src/ft_cd.c.o"
-  "/Users/lreznak-/Documents/minishell1/minishell/src/ft_putbsn.c" "/Users/lreznak-/Documents/minishell1/minishell/cmake-build-debug/CMakeFiles/minishell.dir/src/ft_putbsn.c.o"
-  "/Users/lreznak-/Documents/minishell1/minishell/src/get_env.c" "/Users/lreznak-/Documents/minishell1/minishell/cmake-build-debug/CMakeFiles/minishell.dir/src/get_env.c.o"
-  "/Users/lreznak-/Documents/minishell1/minishell/src/minishell.c" "/Users/lreznak-/Documents/minishell1/minishell/cmake-build-debug/CMakeFiles/minishell.dir/src/minishell.c.o"
-  "/Users/lreznak-/Documents/minishell1/minishell/src/parse_command.c" "/Users/lreznak-/Documents/minishell1/minishell/cmake-build-debug/CMakeFiles/minishell.dir/src/parse_command.c.o"
+  "/Users/andrew/Documents/42/minishell/src/cd_builtin.c" "/Users/andrew/Documents/42/minishell/cmake-build-debug/CMakeFiles/minishell.dir/src/cd_builtin.c.o"
+  "/Users/andrew/Documents/42/minishell/src/echo_builtin.c" "/Users/andrew/Documents/42/minishell/cmake-build-debug/CMakeFiles/minishell.dir/src/echo_builtin.c.o"
+  "/Users/andrew/Documents/42/minishell/src/env_builtin.c" "/Users/andrew/Documents/42/minishell/cmake-build-debug/CMakeFiles/minishell.dir/src/env_builtin.c.o"
+  "/Users/andrew/Documents/42/minishell/src/execute_process.c" "/Users/andrew/Documents/42/minishell/cmake-build-debug/CMakeFiles/minishell.dir/src/execute_process.c.o"
+  "/Users/andrew/Documents/42/minishell/src/ft_putbsn.c" "/Users/andrew/Documents/42/minishell/cmake-build-debug/CMakeFiles/minishell.dir/src/ft_putbsn.c.o"
+  "/Users/andrew/Documents/42/minishell/src/get_env.c" "/Users/andrew/Documents/42/minishell/cmake-build-debug/CMakeFiles/minishell.dir/src/get_env.c.o"
+  "/Users/andrew/Documents/42/minishell/src/minishell.c" "/Users/andrew/Documents/42/minishell/cmake-build-debug/CMakeFiles/minishell.dir/src/minishell.c.o"
+  "/Users/andrew/Documents/42/minishell/src/parse_command.c" "/Users/andrew/Documents/42/minishell/cmake-build-debug/CMakeFiles/minishell.dir/src/parse_command.c.o"
+  "/Users/andrew/Documents/42/minishell/src/try_get_env.c" "/Users/andrew/Documents/42/minishell/cmake-build-debug/CMakeFiles/minishell.dir/src/try_get_env.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

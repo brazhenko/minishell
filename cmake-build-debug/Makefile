@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Users/lreznak-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /Users/lreznak-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/lreznak-/Documents/minishell1/minishell
+CMAKE_SOURCE_DIR = /Users/andrew/Documents/42/minishell
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/lreznak-/Documents/minishell1/minishell/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/andrew/Documents/42/minishell/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/lreznak-/Documents/minishell1/minishell/cmake-build-de
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Users/lreznak-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Users/lreznak-/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lreznak-/Documents/minishell1/minishell/cmake-build-debug/CMakeFiles /Users/lreznak-/Documents/minishell1/minishell/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/andrew/Documents/42/minishell/cmake-build-debug/CMakeFiles /Users/andrew/Documents/42/minishell/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lreznak-/Documents/minishell1/minishell/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/andrew/Documents/42/minishell/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,32 +123,86 @@ minishell/fast:
 	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/build
 .PHONY : minishell/fast
 
-src/cd_buildin.o: src/cd_buildin.c.o
+src/cd_builtin.o: src/cd_builtin.c.o
 
-.PHONY : src/cd_buildin.o
+.PHONY : src/cd_builtin.o
 
 # target to build an object file
-src/cd_buildin.c.o:
-	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/cd_buildin.c.o
-.PHONY : src/cd_buildin.c.o
+src/cd_builtin.c.o:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/cd_builtin.c.o
+.PHONY : src/cd_builtin.c.o
 
-src/cd_buildin.i: src/cd_buildin.c.i
+src/cd_builtin.i: src/cd_builtin.c.i
 
-.PHONY : src/cd_buildin.i
+.PHONY : src/cd_builtin.i
 
 # target to preprocess a source file
-src/cd_buildin.c.i:
-	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/cd_buildin.c.i
-.PHONY : src/cd_buildin.c.i
+src/cd_builtin.c.i:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/cd_builtin.c.i
+.PHONY : src/cd_builtin.c.i
 
-src/cd_buildin.s: src/cd_buildin.c.s
+src/cd_builtin.s: src/cd_builtin.c.s
 
-.PHONY : src/cd_buildin.s
+.PHONY : src/cd_builtin.s
 
 # target to generate assembly for a file
-src/cd_buildin.c.s:
-	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/cd_buildin.c.s
-.PHONY : src/cd_buildin.c.s
+src/cd_builtin.c.s:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/cd_builtin.c.s
+.PHONY : src/cd_builtin.c.s
+
+src/echo_builtin.o: src/echo_builtin.c.o
+
+.PHONY : src/echo_builtin.o
+
+# target to build an object file
+src/echo_builtin.c.o:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/echo_builtin.c.o
+.PHONY : src/echo_builtin.c.o
+
+src/echo_builtin.i: src/echo_builtin.c.i
+
+.PHONY : src/echo_builtin.i
+
+# target to preprocess a source file
+src/echo_builtin.c.i:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/echo_builtin.c.i
+.PHONY : src/echo_builtin.c.i
+
+src/echo_builtin.s: src/echo_builtin.c.s
+
+.PHONY : src/echo_builtin.s
+
+# target to generate assembly for a file
+src/echo_builtin.c.s:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/echo_builtin.c.s
+.PHONY : src/echo_builtin.c.s
+
+src/env_builtin.o: src/env_builtin.c.o
+
+.PHONY : src/env_builtin.o
+
+# target to build an object file
+src/env_builtin.c.o:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/env_builtin.c.o
+.PHONY : src/env_builtin.c.o
+
+src/env_builtin.i: src/env_builtin.c.i
+
+.PHONY : src/env_builtin.i
+
+# target to preprocess a source file
+src/env_builtin.c.i:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/env_builtin.c.i
+.PHONY : src/env_builtin.c.i
+
+src/env_builtin.s: src/env_builtin.c.s
+
+.PHONY : src/env_builtin.s
+
+# target to generate assembly for a file
+src/env_builtin.c.s:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/env_builtin.c.s
+.PHONY : src/env_builtin.c.s
 
 src/execute_process.o: src/execute_process.c.o
 
@@ -176,33 +230,6 @@ src/execute_process.s: src/execute_process.c.s
 src/execute_process.c.s:
 	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/execute_process.c.s
 .PHONY : src/execute_process.c.s
-
-src/ft_cd.o: src/ft_cd.c.o
-
-.PHONY : src/ft_cd.o
-
-# target to build an object file
-src/ft_cd.c.o:
-	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/ft_cd.c.o
-.PHONY : src/ft_cd.c.o
-
-src/ft_cd.i: src/ft_cd.c.i
-
-.PHONY : src/ft_cd.i
-
-# target to preprocess a source file
-src/ft_cd.c.i:
-	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/ft_cd.c.i
-.PHONY : src/ft_cd.c.i
-
-src/ft_cd.s: src/ft_cd.c.s
-
-.PHONY : src/ft_cd.s
-
-# target to generate assembly for a file
-src/ft_cd.c.s:
-	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/ft_cd.c.s
-.PHONY : src/ft_cd.c.s
 
 src/ft_putbsn.o: src/ft_putbsn.c.o
 
@@ -312,6 +339,33 @@ src/parse_command.c.s:
 	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/parse_command.c.s
 .PHONY : src/parse_command.c.s
 
+src/try_get_env.o: src/try_get_env.c.o
+
+.PHONY : src/try_get_env.o
+
+# target to build an object file
+src/try_get_env.c.o:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/try_get_env.c.o
+.PHONY : src/try_get_env.c.o
+
+src/try_get_env.i: src/try_get_env.c.i
+
+.PHONY : src/try_get_env.i
+
+# target to preprocess a source file
+src/try_get_env.c.i:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/try_get_env.c.i
+.PHONY : src/try_get_env.c.i
+
+src/try_get_env.s: src/try_get_env.c.s
+
+.PHONY : src/try_get_env.s
+
+# target to generate assembly for a file
+src/try_get_env.c.s:
+	$(MAKE) -f CMakeFiles/minishell.dir/build.make CMakeFiles/minishell.dir/src/try_get_env.c.s
+.PHONY : src/try_get_env.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -321,15 +375,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... minishell"
-	@echo "... src/cd_buildin.o"
-	@echo "... src/cd_buildin.i"
-	@echo "... src/cd_buildin.s"
+	@echo "... src/cd_builtin.o"
+	@echo "... src/cd_builtin.i"
+	@echo "... src/cd_builtin.s"
+	@echo "... src/echo_builtin.o"
+	@echo "... src/echo_builtin.i"
+	@echo "... src/echo_builtin.s"
+	@echo "... src/env_builtin.o"
+	@echo "... src/env_builtin.i"
+	@echo "... src/env_builtin.s"
 	@echo "... src/execute_process.o"
 	@echo "... src/execute_process.i"
 	@echo "... src/execute_process.s"
-	@echo "... src/ft_cd.o"
-	@echo "... src/ft_cd.i"
-	@echo "... src/ft_cd.s"
 	@echo "... src/ft_putbsn.o"
 	@echo "... src/ft_putbsn.i"
 	@echo "... src/ft_putbsn.s"
@@ -342,6 +399,9 @@ help:
 	@echo "... src/parse_command.o"
 	@echo "... src/parse_command.i"
 	@echo "... src/parse_command.s"
+	@echo "... src/try_get_env.o"
+	@echo "... src/try_get_env.i"
+	@echo "... src/try_get_env.s"
 .PHONY : help
 
 

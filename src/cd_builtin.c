@@ -31,31 +31,18 @@ int     ft_change_dir(char *path)
 
 int     cd_builtin(char **argv, char **envp)
 {
-    char *home;
-
-    home = get_env("HOME", envp);
-    if (!argv[1])
+    if (!argv[1] || ft_strequ(argv[1], "--"))
     {
-        ft_change_dir(home);
+        ft_change_dir(try_get_env("HOME", envp));
+    }
+
+    else if (ft_strequ(argv[1], "-"))
+    {
+        ft_change_dir(try_get_env("OLDPWD", envp));
     }
     else
     {
-        if (ft_strequ(argv[1], "--"))
-        {
-            ft_change_dir(home);
-            return (1);
-        }
-
-//        else if (argv[0][0] == '-' && !argv[0][1])
-//        {
-//            ft_change_dir(get_env("PWDOLD"));
-//            return (1);
-//        }
-        else
-        {
-            ft_change_dir(argv[1]);
-            return (1);
-        }
+        ft_change_dir(try_get_env(argv[1], envp));
     }
     return (0);
 }

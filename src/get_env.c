@@ -6,13 +6,16 @@
 
 char 					*get_env(char *name, char **envp)
 {
-	while (*envp)
+	int			i;
+
+	i = 0;
+	while (envp[i])
 	{
-		if (ft_strstr(*envp, name))
+		if (ft_strstr(envp[i], name))
 		{
-			return (ft_strsplit(*envp, '=')[1]);
+			return (ft_strsplit(envp[i], '=')[1]);
 		}
-		envp++;
+		i++;
 	}
 	return (NULL);
 }

@@ -31,7 +31,20 @@ static int 			command_count(char **commandv)
 	return (c);
 }
 
-char				***parse_command(char *command)
+char 				**parse_for_envs(char  **commandv, char ** envp)
+{
+	int 	i;
+
+	i = 0;
+	while (commandv && commandv[i])
+	{
+		commandv[i] = try_get_env(commandv[i], envp);
+		i++;
+	}
+	return (commandv);
+}
+
+char				***parse_command(char *command, char **envp)
 {
 	char		**commandv;
 	char		***commandvv;
@@ -43,7 +56,7 @@ char				***parse_command(char *command)
 	commandvv[commandc] = NULL;
 	while (commandc--)
 	{
-		commandvv[commandc] = ft_strsplit(commandv[commandc], ' ');
+		commandvv[commandc] = parse_for_envs(ft_strsplit(commandv[commandc], ' '), envp);
 	}
 	return (commandvv);
 }
