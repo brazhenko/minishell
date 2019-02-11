@@ -1,6 +1,14 @@
-//
-// Created by Lommy greenhands Reznak mo reznak on 2019-02-09.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_command.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lreznak- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/11 10:28:35 by lreznak-          #+#    #+#             */
+/*   Updated: 2019/02/11 10:28:36 by lreznak-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "minishell.h"
 
@@ -18,7 +26,7 @@ static void			print_commandvv(char ***commandvv)
 	}
 }
 
-static int 			command_count(char **commandv)
+static int			command_count(char **commandv)
 {
 	int		c;
 
@@ -31,9 +39,9 @@ static int 			command_count(char **commandv)
 	return (c);
 }
 
-char 				**parse_for_envs(char  **commandv, char ** envp)
+char				**parse_for_envs(char **commandv, char **envp)
 {
-	int 	i;
+	int		i;
 
 	i = 0;
 	while (commandv && commandv[i])
@@ -56,7 +64,8 @@ char				***parse_command(char *command, char **envp)
 	commandvv[commandc] = NULL;
 	while (commandc--)
 	{
-		commandvv[commandc] = parse_for_envs(ft_strsplit(commandv[commandc], ' '), envp);
+		commandvv[commandc] = parse_for_envs(ft_strsplit(commandv[commandc],
+																' '), envp);
 	}
 	return (commandvv);
 }

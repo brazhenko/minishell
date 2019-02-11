@@ -1,10 +1,18 @@
-//
-// Created by Andrew Brazhenko on 2019-02-10.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   echo_builtin.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lreznak- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/11 10:37:19 by lreznak-          #+#    #+#             */
+/*   Updated: 2019/02/11 10:37:20 by lreznak-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "minishell.h"
 
-void 			echo_builtin(char **argv, char **envp)
+void				echo_builtin(char **argv, char **envp)
 {
 	int		i;
 

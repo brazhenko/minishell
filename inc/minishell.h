@@ -1,4 +1,7 @@
 
+#ifndef MINISHELL_H
+# define MINISHELL_H
+
 # include "libft.h"
 # include <stdio.h>
 # include <unistd.h>
@@ -13,6 +16,7 @@
 # include <time.h>
 # include <fcntl.h>
 # include <limits.h>
+# include <signal.h>
 
 void 				exe_process(char *path, char *name, char **params, char **envs);
 char 				*get_env(char *name, char **envp);
@@ -24,5 +28,6 @@ void				env_builtin(char **envp);
 char	 			*try_get_env(char *str, char **envp);
 char				***parse_command(char *command, char **envp);
 void 				echo_builtin(char **argv, char **envp);
+void				ctrl_c(int sig);
 
-
+#endif

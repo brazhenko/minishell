@@ -12,5 +12,6 @@ all:
 		$(SRC)/env_builtin.c \
 		$(SRC)/try_get_env.c \
 		$(SRC)/echo_builtin.c \
+		$(SRC)/ctrl_c.c \
 		$(SRC)/libft.a \
 		-I $(INC) -o minishell

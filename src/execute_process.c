@@ -1,14 +1,34 @@
-//
-// Created by Lommy greenhands Reznak mo reznak on 2019-02-09.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   execute_process.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lreznak- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/11 10:23:02 by lreznak-          #+#    #+#             */
+/*   Updated: 2019/02/11 10:23:05 by lreznak-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <dirent.h>
 #include "minishell.h"
 
-char 			*str_till_bsn(char *str)
+volatile sig_atomic_t	g_is_child = 0;
+pid_t					g_pid = -1;
+
+void			ctrl_c(int sig)
+{
+	signal(sig, SIG_IGN);
+	if (g_pid > 0)
+	{
+		kill(g_pid, SIGINT);
+	}
+}
+
+char			*str_till_bsn(char *str)
 {
 	int		len;
-	char 	*raw_str;
+	char	*raw_str;
 
 	len = ft_strbsn_len(str);
 	raw_str = (char *)malloc(sizeof(char) * len);
@@ -32,7 +52,7 @@ char			*parse_path(char *name, char **envs)
 		{
 			while ((file = readdir(dir)))
 			{
-				if (ft_strcmp(file->d_name, name) == 0)
+				if (ft_strequ(file->d_name, name))
 					return (*path);
 			}
 			closedir(dir);
@@ -42,19 +62,20 @@ char			*parse_path(char *name, char **envs)
 	return (NULL);
 }
 
-void 				exe_process(char *path, char *name, char **params, char **envs)
+void			exe_process(char *path, char *name, char **params, char **envs)
 {
-	pid_t pid;
-
+	signal(SIGINT, ctrl_c);
 	if (path && name && params && *params)
 	{
-		if ((pid = fork()) == -1)
+		if ((g_pid = fork()) == -1)
 			ft_putstr("fork error");
-		else if (pid == 0)
+		else if (g_pid == 0)
 		{
+			g_is_child = 1;
 			execve(ft_strjoin(ft_strjoin(path, "/"), name), params, envs);
 		}
-		wait(NULL);
+		else if (g_pid > 0)
+			wait(&g_pid);
 	}
 	else
 	{

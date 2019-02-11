@@ -1,10 +1,18 @@
-//
-// Created by Lommy greenhands Reznak mo reznak on 2019-02-09.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putbsn.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lreznak- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/11 10:36:33 by lreznak-          #+#    #+#             */
+/*   Updated: 2019/02/11 10:36:35 by lreznak-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-int 			ft_strbsn_len(char *str)
+int				ft_strbsn_len(char *str)
 {
 	int i;
 
@@ -17,7 +25,7 @@ int 			ft_strbsn_len(char *str)
 	return (i + 1);
 }
 
-void				ft_putbsn(char *str)
+void			ft_putbsn(char *str)
 {
 	write(1, str, ft_strbsn_len(str));
 }
