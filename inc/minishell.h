@@ -1,6 +1,7 @@
 
 #ifndef MINISHELL_H
 # define MINISHELL_H
+# define HISTORY .shell_history
 
 # include "libft.h"
 # include <stdio.h>
@@ -16,6 +17,7 @@
 # include <time.h>
 # include <fcntl.h>
 # include <limits.h>
+# include <dirent.h>
 # include <signal.h>
 
 void 				exe_process(char *path, char *name, char **params, char **envs);
@@ -29,5 +31,6 @@ char	 			*try_get_env(char *str, char **envp);
 char				***parse_command(char *command, char **envp);
 void 				echo_builtin(char **argv, char **envp);
 void				ctrl_c(int sig);
+char	 			***prompt(char **v, char **envp);
 
 #endif

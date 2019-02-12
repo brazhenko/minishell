@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <dirent.h>
 #include "minishell.h"
 
 volatile sig_atomic_t	g_is_child = 0;
@@ -23,6 +22,7 @@ void			ctrl_c(int sig)
 	{
 		kill(g_pid, SIGINT);
 	}
+	write(1, "\n", 1);
 }
 
 char			*str_till_bsn(char *str)

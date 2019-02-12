@@ -11,19 +11,16 @@
 /* ************************************************************************** */
 
 #include "minishell.h"
+#include ".shell_config.h"
 
 int						main(int c, char **v, char **envp)
 {
-	char		*command;
 	char		***parsed;
 
-	command = ft_strnew(2048);
 	while (1)
 	{
-		ft_putstr(getcwd(NULL, 1));
-		ft_putstr("  $> ");
-		read(STDIN_FILENO, command, 2048);
-		parsed = parse_command(str_till_bsn(command), envp);
+
+		parsed = prompt(v, envp);
 		while (*parsed)
 		{
 			if (parsed && *parsed && **parsed)
