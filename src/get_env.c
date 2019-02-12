@@ -15,13 +15,16 @@
 char						*get_env(char *name, char **envp)
 {
 	int			i;
+	char 		**env;
 
 	i = 0;
 	while (envp[i])
 	{
 		if (ft_strstr(envp[i], name))
 		{
-			return (ft_strsplit(envp[i], '=')[1]);
+			env = ft_strsplit(envp[i], '=');
+			free(env[0]);
+			return (env[1]);
 		}
 		i++;
 	}

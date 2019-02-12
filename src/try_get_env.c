@@ -24,7 +24,7 @@ char					*try_get_env(char *str, char **envp)
 
 	env_var = get_env(str + 1, envp);
 	if (str && *str == '$')
-		return (env_var ? env_var : str);
+		return (env_var ? env_var : "");
 	else if (ft_strequ("~", str))
 		return (try_get_env("$HOME", envp));
 	return (str);

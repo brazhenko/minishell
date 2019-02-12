@@ -45,5 +45,6 @@ int						main(int c, char **v, char **envp)
 			}
 			parsed++;
 		}
+//		/* delete_parsed (parsed) */
 	}
 }
