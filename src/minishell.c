@@ -16,10 +16,13 @@
 int						main(int c, char **v, char **envp)
 {
 	char		***parsed;
+	int		i;
+	int 	j;
 
+	i = 0;
+	j = 0;
 	while (1)
 	{
-
 		parsed = prompt(v, envp);
 		while (*parsed)
 		{
@@ -45,6 +48,6 @@ int						main(int c, char **v, char **envp)
 			}
 			parsed++;
 		}
-//		/* delete_parsed (parsed) */
+		/* delete_parsed (parsed) */
 	}
 }

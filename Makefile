@@ -1,9 +1,10 @@
-INC = inc
-SRC = src
-NAME = minishell
+INC 		= inc
+SRC 		= src
+NAME 		= minishell
+CC 			= gcc
 
 all: 
-	@gcc $(SRC)/minishell.c \
+	@$(CC) $(SRC)/minishell.c \
 		$(SRC)/get_env.c \
 		$(SRC)/parse_command.c \
 		$(SRC)/execute_process.c \
@@ -15,4 +16,13 @@ all:
 		$(SRC)/ctrl_c.c \
 		$(SRC)/prompt.c \
 		$(SRC)/libft.a \
-		-I $(INC) -o minishell
+		-I $(INC) -o $(NAME)
+	@echo COMPILED!
+
+clean:
+	
+	
+fclean: clean 
+	rm -f $(NAME)
+
+re: fclean all

@@ -65,7 +65,7 @@ char				***parse_command(char *command, char **envp)
 	while (commandc--)
 	{
 		commandvv[commandc] = parse_for_envs(ft_strsplit(commandv[commandc],
-																' '), envp);
+				' '), envp);
 	}
 	return (commandvv);
 }
