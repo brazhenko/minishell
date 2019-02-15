@@ -15,6 +15,7 @@ all:
 		$(SRC)/echo_builtin.c \
 		$(SRC)/ctrl_c.c \
 		$(SRC)/prompt.c \
+		$(SRC)/delete_commandvv.c \
 		$(SRC)/libft.a \
 		-I $(INC) -o $(NAME)
 	@echo COMPILED!

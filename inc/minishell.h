@@ -20,7 +20,7 @@
 # include <dirent.h>
 # include <signal.h>
 
-void 				exe_process(char *path, char *name, char **params, char **envs);
+void 				execute_process(char *path, char *name, char **params, char **envs);
 char 				*get_env(char *name, char **envp);
 char				*parse_path(char *name, char **envs);
 int 				ft_strbsn_len(char *str);
@@ -32,5 +32,7 @@ char				***parse_command(char *command, char **envp);
 void 				echo_builtin(char **argv, char **envp);
 void				ctrl_c(int sig);
 char	 			***prompt(char **v, char **envp);
+int 				delete_commandvv(char ***commandvv);
+
 
 #endif

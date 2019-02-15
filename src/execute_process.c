@@ -43,17 +43,22 @@ char			*parse_path(char *name, char **envs)
 	DIR					*dir;
 	char				**path;
 	struct dirent		*file;
+	int 				i;
 
+	i = 0;
 	path = ft_strsplit(get_env("PATH", envs), ':');
-	while (*path)
+	while (path[i])
 	{
-		dir = opendir(*path);
+		dir = opendir(path[i]);
 		if (dir)
 		{
 			while ((file = readdir(dir)))
 			{
 				if (ft_strequ(file->d_name, name))
-					return (*path);
+				{
+					closedir(dir);
+					return (path[i]);
+				}
 			}
 			closedir(dir);
 		}
@@ -62,7 +67,7 @@ char			*parse_path(char *name, char **envs)
 	return (NULL);
 }
 
-void			exe_process(char *path, char *name, char **params, char **envs)
+void			execute_process(char *path, char *name, char **params, char **envs)
 {
 	signal(SIGINT, ctrl_c);
 	if (path && name && params && *params)

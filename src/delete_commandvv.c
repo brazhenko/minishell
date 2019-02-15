@@ -19,4 +19,5 @@ int 			delete_commandvv(char ***commandvv)
 		i++;
 	}
 	free(commandvv);
+	return (1);
 }

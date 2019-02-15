@@ -24,30 +24,55 @@ int						main(int c, char **v, char **envp)
 	while (1)
 	{
 		parsed = prompt(v, envp);
-		while (*parsed)
+//		while (*parsed)
+//		{
+//			if (parsed && *parsed && **parsed)
+//			{
+//				if (ft_strequ("echo", **parsed))
+//					echo_builtin(*parsed, envp);
+//				else if (ft_strequ("cd", **parsed))
+//					cd_builtin(*parsed, envp);
+//				else if (ft_strequ("setenv", **parsed))
+//					(setenv((*parsed)[1], (*parsed)[2], 1));
+//				else if (ft_strequ("unsetenv", **parsed))
+//					;
+//				else if (ft_strequ("env", **parsed))
+//					env_builtin(envp);
+//				else if (ft_strequ("exit", **parsed))
+//					exit(0);
+//				else
+//				{
+//					execute_process(parse_path(**parsed, envp),
+//									**parsed, *parsed, envp);
+//				}
+//			}
+//			parsed++;
+//		}
+		while (parsed[i])
 		{
-			if (parsed && *parsed && **parsed)
+			if (parsed && parsed[i] && parsed[i][0])
 			{
-				if (ft_strequ("echo", **parsed))
-					echo_builtin(*parsed, envp);
-				else if (ft_strequ("cd", **parsed))
-					cd_builtin(*parsed, envp);
-				else if (ft_strequ("setenv", **parsed))
-					(setenv((*parsed)[1], (*parsed)[2], 1));
-				else if (ft_strequ("unsetenv", **parsed))
+				if (ft_strequ("echo", parsed[i][0]))
+					echo_builtin(parsed[i], envp);
+				else if (ft_strequ("cd", parsed[i][0]))
+					cd_builtin(parsed[i], envp);
+				else if (ft_strequ("setenv", parsed[i][0]))
 					;
-				else if (ft_strequ("env", **parsed))
+				else if (ft_strequ("unsetenv", parsed[i][0]))
+					;
+				else if (ft_strequ("env", parsed[i][0]))
 					env_builtin(envp);
-				else if (ft_strequ("exit", **parsed))
+				else if (ft_strequ("exit", parsed[i][0]))
 					exit(0);
 				else
 				{
-					exe_process(parse_path(**parsed, envp),
-									**parsed, *parsed, envp);
+					execute_process(parse_path(parsed[i][0], envp),
+									parsed[i][0], parsed[i], envp);
 				}
 			}
-			parsed++;
+			i++;
 		}
-		/* delete_parsed (parsed) */
+		i = 0;
+		delete_commandvv(parsed);
 	}
 }
