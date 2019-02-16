@@ -13,10 +13,10 @@
 #include "minishell.h"
 
 /*
- * 		Parses system char** envp copy and returns a
- * 		new char* if an env var is found
- * 		or the old param instead.
- */
+**		Parses system char** envp copy and returns a
+**		new char* if an env var is found
+**		or the old param instead.
+*/
 
 char					*try_get_env(char *str, char **envp)
 {

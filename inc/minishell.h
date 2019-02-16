@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minishell.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lreznak- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/16 08:23:15 by lreznak-          #+#    #+#             */
+/*   Updated: 2019/02/16 08:23:18 by lreznak-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef MINISHELL_H
 # define MINISHELL_H
@@ -20,19 +31,19 @@
 # include <dirent.h>
 # include <signal.h>
 
-void 				execute_process(char *path, char *name, char **params, char **envs);
-char 				*get_env(char *name, char **envp);
+void				execute_process(char *path, char *name,
+								char **params, char **envs);
+char				*get_env(char *name, char **envp);
 char				*parse_path(char *name, char **envs);
-int 				ft_strbsn_len(char *str);
-char 				*str_till_bsn(char *str);
-int 			    cd_builtin(char **argv, char **envp);
+int					ft_strbsn_len(char *str);
+char				*str_till_bsn(char *str);
+int					cd_builtin(char **argv, char **envp);
 void				env_builtin(char **envp);
-char	 			*try_get_env(char *str, char **envp);
+char				*try_get_env(char *str, char **envp);
 char				***parse_command(char *command, char **envp);
-void 				echo_builtin(char **argv, char **envp);
+void				echo_builtin(char **argv, char **envp);
 void				ctrl_c(int sig);
-char	 			***prompt(char **v, char **envp);
-int 				delete_commandvv(char ***commandvv);
-
+char				***prompt(char **v, char **envp);
+int					delete_commandvv(char ***commandvv);
 
 #endif

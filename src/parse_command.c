@@ -12,19 +12,21 @@
 
 #include "minishell.h"
 
-static void			print_commandvv(char ***commandvv)
-{
-	while (*commandvv)
-	{
-		ft_putendl("command:");
-		while (**commandvv)
-		{
-			ft_putendl(**commandvv);
-			(*commandvv)++;
-		}
-		commandvv++;
-	}
-}
+/*
+**static void			print_commandvv(char ***commandvv)
+**{
+**	while (*commandvv)
+**	{
+**		ft_putendl("command:");
+**		while (**commandvv)
+**		{
+**			ft_putendl(**commandvv);
+**			(*commandvv)++;
+**		}
+**		commandvv++;
+**	}
+**}
+*/
 
 static int			command_count(char **commandv)
 {
@@ -41,7 +43,7 @@ static int			command_count(char **commandv)
 char				**parse_for_envs(char **commandv, char **envp)
 {
 	int		i;
-	char 	*tmp;
+	char	*tmp;
 
 	i = 0;
 	while (commandv && commandv[i])
@@ -67,6 +69,7 @@ static void			del_commandv(char **commandv)
 	}
 	free(commandv);
 }
+
 char				***parse_command(char *command, char **envp)
 {
 	char		**commandv;

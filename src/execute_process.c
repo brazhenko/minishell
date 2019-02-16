@@ -15,7 +15,7 @@
 volatile sig_atomic_t	g_is_child = 0;
 pid_t					g_pid = -1;
 
-void			ctrl_c(int sig)
+void				ctrl_c(int sig)
 {
 	signal(sig, SIG_IGN);
 	if (g_pid > 0)
@@ -25,7 +25,7 @@ void			ctrl_c(int sig)
 	write(1, "\n", 1);
 }
 
-char			*str_till_bsn(char *str)
+char				*str_till_bsn(char *str)
 {
 	int		len;
 	char	*raw_str;
@@ -38,9 +38,9 @@ char			*str_till_bsn(char *str)
 	return (raw_str);
 }
 
-static void 	del_pathv(char **path, char *pathvalue)
+static void			del_pathv(char **path, char *pathvalue)
 {
-	int 			i;
+	int			i;
 
 	i = 0;
 	while (path[i])
@@ -54,35 +54,35 @@ static void 	del_pathv(char **path, char *pathvalue)
 	free(path);
 }
 
-char			*parse_path(char *name, char **envs)
+char				*get_string(DIR *dir, char **path, int i, char *pathvalue)
+{
+	closedir(dir);
+	pathvalue = path[i];
+	del_pathv(path, pathvalue);
+	return (pathvalue);
+}
+
+char				*parse_path(char *name, char **envs)
 {
 	DIR					*dir;
 	char				**path;
 	struct dirent		*file;
-	int 				i;
-	char 				*pathvalue;
-	char 				*env;
+	int					i;
+	char				*pathvalue;
 
 	i = 0;
+	pathvalue = get_env("PATH", envs);
+	path = ft_strsplit(pathvalue, ':');
+	free(pathvalue);
 	pathvalue = NULL;
-	env = get_env("PATH", envs);
-	path = ft_strsplit(env, ':');
-	free(env);
 	while (path[i])
 	{
 		dir = opendir(path[i]);
 		if (dir)
 		{
 			while ((file = readdir(dir)))
-			{
 				if (ft_strequ(file->d_name, name))
-				{
-					closedir(dir);
-					pathvalue = path[i];
-					del_pathv(path, pathvalue);
-					return (pathvalue);
-				}
-			}
+					return (get_string(dir, path, i, pathvalue));
 			closedir(dir);
 		}
 		i++;
@@ -90,7 +90,8 @@ char			*parse_path(char *name, char **envs)
 	return (pathvalue);
 }
 
-void			execute_process(char *path, char *name, char **params, char **envs)
+void				execute_process(char *path, char *name,
+								char **params, char **envs)
 {
 	signal(SIGINT, ctrl_c);
 	if (path && name && params && *params)

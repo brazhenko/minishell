@@ -136,7 +136,6 @@ void				dcl_forward(t_dcl **elem);
 void				dcl_end(t_dcl **elem);
 void				dcl_take_n(int n, t_dcl **elem);
 
-
 int					calc(char *expr);
 
 #endif

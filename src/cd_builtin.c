@@ -20,7 +20,6 @@ int			ft_change_dir(char *path)
 	pwd = getcwd(buff, 4096);
 	if (!chdir(path))
 	{
-//		setenv("PWDOLD", pwd);
 		return (1);
 	}
 	else
@@ -39,7 +38,7 @@ int			ft_change_dir(char *path)
 
 int			cd_builtin(char **argv, char **envp)
 {
-	char 		*env;
+	char		*env;
 
 	if (!argv[1] || ft_strequ(argv[1], "--"))
 	{

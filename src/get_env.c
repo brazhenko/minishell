@@ -15,8 +15,8 @@
 char						*get_env(char *name, char **envp)
 {
 	int			i;
-	char 		**env;
-	char 		*envval;
+	char		**env;
+	char		*envval;
 
 	i = 0;
 	while (envp[i])

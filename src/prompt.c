@@ -1,12 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   prompt.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lreznak- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/16 07:46:52 by lreznak-          #+#    #+#             */
+/*   Updated: 2019/02/16 07:46:55 by lreznak-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 #include ".shell_config.h"
 
-char	 		***prompt(char **v, char **envp)
+char					***prompt(char **v, char **envp)
 {
-	char *command = ft_strnew(2048);
+	char *command;
 	char ***commandvv;
 	char *path;
 
+	command = ft_strnew(2048);
 	ft_putstr(PROMPT_COLOR);
 	ft_putstr("➜ ");
 	path = getcwd(NULL, 1);

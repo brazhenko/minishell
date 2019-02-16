@@ -4,7 +4,7 @@ NAME 		= minishell
 CC 			= gcc
 
 all: 
-	@$(CC)  -g -O0 \
+	@$(CC)  -g -O0 -Wall -Werror \
 		$(SRC)/minishell.c \
 		$(SRC)/get_env.c \
 		$(SRC)/parse_command.c \
