@@ -38,15 +38,36 @@ char			*str_till_bsn(char *str)
 	return (raw_str);
 }
 
+static void 	del_pathv(char **path, char *pathvalue)
+{
+	int 			i;
+
+	i = 0;
+	while (path[i])
+	{
+		if (!ft_strequ(path[i], pathvalue))
+		{
+			free(path[i]);
+		}
+		i++;
+	}
+	free(path);
+}
+
 char			*parse_path(char *name, char **envs)
 {
 	DIR					*dir;
 	char				**path;
 	struct dirent		*file;
 	int 				i;
+	char 				*pathvalue;
+	char 				*env;
 
 	i = 0;
-	path = ft_strsplit(get_env("PATH", envs), ':');
+	pathvalue = NULL;
+	env = get_env("PATH", envs);
+	path = ft_strsplit(env, ':');
+	free(env);
 	while (path[i])
 	{
 		dir = opendir(path[i]);
@@ -57,14 +78,16 @@ char			*parse_path(char *name, char **envs)
 				if (ft_strequ(file->d_name, name))
 				{
 					closedir(dir);
-					return (path[i]);
+					pathvalue = path[i];
+					del_pathv(path, pathvalue);
+					return (pathvalue);
 				}
 			}
 			closedir(dir);
 		}
-		path++;
+		i++;
 	}
-	return (NULL);
+	return (pathvalue);
 }
 
 void			execute_process(char *path, char *name, char **params, char **envs)
@@ -87,4 +110,5 @@ void			execute_process(char *path, char *name, char **params, char **envs)
 		ft_putstr("minishell: command not found: ");
 		ft_putendl(name);
 	}
+	free(path);
 }

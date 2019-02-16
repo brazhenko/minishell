@@ -39,17 +39,23 @@ int			ft_change_dir(char *path)
 
 int			cd_builtin(char **argv, char **envp)
 {
+	char 		*env;
+
 	if (!argv[1] || ft_strequ(argv[1], "--"))
 	{
-		ft_change_dir(try_get_env("$HOME", envp));
+		env = try_get_env("$HOME", envp);
+		ft_change_dir(env);
+		free(env);
 	}
 	else if (ft_strequ(argv[1], "-"))
 	{
-		ft_change_dir(try_get_env("$OLDPWD", envp));
+		env = try_get_env("$OLDPWD", envp);
+		ft_change_dir(env);
+		free(env);
 	}
 	else
 	{
-		ft_change_dir(try_get_env(argv[1], envp));
+		ft_change_dir(argv[1]);
 	}
 	return (0);
 }

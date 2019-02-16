@@ -31,9 +31,8 @@ static int			command_count(char **commandv)
 	int		c;
 
 	c = 0;
-	while (*commandv)
+	while (commandv[c])
 	{
-		commandv++;
 		c++;
 	}
 	return (c);
@@ -52,6 +51,18 @@ char				**parse_for_envs(char **commandv, char **envp)
 	return (commandv);
 }
 
+static void			del_commandv(char **commandv)
+{
+	int		i;
+
+	i = 0;
+	while (commandv[i])
+	{
+		free(commandv[i]);
+		i++;
+	}
+	free(commandv);
+}
 char				***parse_command(char *command, char **envp)
 {
 	char		**commandv;
@@ -67,5 +78,7 @@ char				***parse_command(char *command, char **envp)
 		commandvv[commandc] = parse_for_envs(ft_strsplit(commandv[commandc],
 				' '), envp);
 	}
+	del_commandv(commandv);
+	free(command);
 	return (commandvv);
 }

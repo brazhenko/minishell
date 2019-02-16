@@ -4,7 +4,8 @@ NAME 		= minishell
 CC 			= gcc
 
 all: 
-	@$(CC) $(SRC)/minishell.c \
+	@$(CC)  -g -O0 \
+		$(SRC)/minishell.c \
 		$(SRC)/get_env.c \
 		$(SRC)/parse_command.c \
 		$(SRC)/execute_process.c \
