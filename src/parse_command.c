@@ -41,11 +41,15 @@ static int			command_count(char **commandv)
 char				**parse_for_envs(char **commandv, char **envp)
 {
 	int		i;
+	char 	*tmp;
 
 	i = 0;
 	while (commandv && commandv[i])
 	{
+		tmp = commandv[i];
 		commandv[i] = try_get_env(commandv[i], envp);
+		if (commandv[i] != tmp)
+			free(tmp);
 		i++;
 	}
 	return (commandv);
