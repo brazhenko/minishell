@@ -19,6 +19,7 @@ int						main(int c, char **v, char **envp)
 	int			i;
 
 	i = 0;
+	envp = envp_cpy(envp);
 	while (1)
 	{
 		parsed = prompt(v, envp);
@@ -39,6 +40,7 @@ int						main(int c, char **v, char **envp)
 				else if (ft_strequ("exit", parsed[i][0]))
 				{
 					delete_commandvv(parsed);
+					delete_env(envp);
 					exit(0);
 				}
 				else

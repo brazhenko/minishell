@@ -45,5 +45,7 @@ void				echo_builtin(char **argv, char **envp);
 void				ctrl_c(int sig);
 char				***prompt(char **v, char **envp);
 int					delete_commandvv(char ***commandvv);
+char 				**envp_cpy(char **envp);
+void				delete_env(char **envp_cpy);
 
 #endif
